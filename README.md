@@ -1,11 +1,25 @@
-<div align="center">
+# TicketIS - Portal de Soporte y Gestión
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Bienvenido al repositorio de **TicketIS**, una solución profesional para la gestión de tickets de soporte técnico.
 
-  <h1>Built with AI Studio</h2>
+## 🚀 Inicio Rápido
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+El proyecto está construido sobre **Next.js 15** y **Firebase**.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1.  **Acceso Público:** La página de inicio permite a cualquier colaborador reportar una incidencia de forma rápida.
+2.  **Acceso Administrativo:** Utilice el botón "Iniciar Sesión" en la esquina superior derecha para acceder a las herramientas de gestión.
 
-</div>
+## 🛠️ Características Principales
+
+*   **Dashboard de Analíticas:** Visualización de KPIs mediante gráficos interactivos.
+*   **Gestión de Recursos:** Panel para configurar Bodegas, Cuentas y Sistemas dinámicos.
+*   **Reportes:** Exportación de datos a Excel/CSV.
+*   **Seguridad:** Control de acceso basado en roles (Admin/User).
+
+## 📄 Documentación para Presentación
+
+Para una descripción detallada de la funcionalidad y arquitectura orientada a presentaciones, consulte el archivo:
+`docs/APP_DESCRIPTION.md`
+
+## 📧 Contacto
+Desarrollado por **Jhon Rangel** (Jhon.rangel@kuehne-nagel.com)

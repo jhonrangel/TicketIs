@@ -1,0 +1,1 @@
+// This file is being moved. Its content will be in src/firebase/client-provider.tsx

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217 63% 26%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 63% 26%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 63% 36%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217 63% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .animated-bg {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-bg::before,
+  .animated-bg::after {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 250vmax;
+     height: 250vmax;
+     background: transparent;
+     background-image:
+      radial-gradient(circle at center, hsl(var(--primary) / 0.05), transparent 30%),
+      radial-gradient(circle at center, hsl(var(--secondary) / 0.05), transparent 30%);
+     background-size: 100% 100%;
+     background-repeat: no-repeat;
+     animation: gradient-move 40s linear infinite;
+     z-index: 0;
+     transform-origin: center;
+  }
+
+  .animated-bg::before {
+    margin-left: -125vmax;
+    margin-top: -125vmax;
+  }
+
+  .animated-bg::after {
+    margin-left: -125vmax;
+    margin-top: -125vmax;
+    animation-direction: reverse;
+    animation-duration: 50s;
+    background-image:
+      radial-gradient(circle at center, hsl(var(--accent) / 0.05), transparent 35%),
+      radial-gradient(circle at center, hsl(var(--muted) / 0.05), transparent 35%);
+  }
+  
+  @keyframes gradient-move {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+@layer components {
+    .resizer {
+        @apply absolute right-0 top-0 h-full w-0.5 cursor-col-resize select-none touch-none bg-border/50 transition-colors;
+    }
+    .resizer.is-resizing {
+        @apply bg-primary;
+    }
+}
